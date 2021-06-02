@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+*{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+header{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(27deg, #1a52f9 0%, #b721ff 80%);
+    display: flex;
+    flex-flow: column;
+    color: #fff;
+    justify-content:space-between
+}
+header::before{
+    content: '';
+    height: 400px;
+    width: 400px;
+    background-image: url('./Logo.png');
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    opacity: .5;
+    left: 50px;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+.navbar{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar div{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.logo a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+.menu{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    left: 200vw;
+    top: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: clamp(40px, 5vw, 70px);
+    transition: all 500ms ease-in-out;
+}
+.menu p{
+    position: fixed;
+    display: grid;
+    left: 200vw;
+    top:  50px;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.menu ul{
+    justify-content: space-around;
+    
+}
+.menu ul li{
+    list-style: none;
+    /* display: inline-block; */
+    padding: 10px 15px;
+}
+.menu ul li:hover::after{
+    width: 100%;
+}
+.menu ul li::after{
+    content: '';
+    height: 5px;
+    width: 0;
+    display: flex;
+    flex-flow: column;
+    background-color: #000;
+    transition: width 500ms ease-in-out;
+}
+
+
+.menuout{
+    left: 0;
+}
+.menuout p{
+    left: 50px;
+}
+
+/****************************/
+
+
+
+.open_menue{
+    position: fixed;
+    display: flex;
+    place-items: center;
+    top: 0;
+    transition: all 500ms ease-in-out;
+}
+.open_menue ul{
+    justify-content: space-around;
+    height: 100px;
+    display: flex;
+    place-items: center;
+}
+.open_menue ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+.open_menue ul li:hover::after{
+    width: 100%;
+}
+.open_menue ul li::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    display: flex;
+    flex-flow: column;
+    background-color: #fff;
+    transition: width 500ms ease-in-out;
+}
+.open_menue ul li a {
+    color: #fff;
+}
+
+
+
+/**************************/
+
+
+
+.content_center{
+    display: flex;
+    flex-flow: column;
+    place-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.content_center h1{
+    font-size: clamp(40px, 5vw, 70px);
+    z-index: 1;
+}
+.content_center h2{
+    font-size: clamp(10px, 2.5vw, 30px);
+    z-index: 1;
+}
+
+
+.dot_grid{
+    position: absolute;
+    bottom: -300px;
+    left: 45%;
+    opacity: .7
+}
+
+
+
+
+
+.hamButton{
+    font-size: 50px;
+    cursor: pointer;
+}
+
+
+@media   (max-width: 800px) {
+    header::before{
+        height: 300px;
+        width: 300px;
+        background-size: 300px 300px;
+    }
+}
+@media   (max-width: 600px) {
+    header::before{
+        left: 0;
+    }
+}
+
+
+
+@media   (max-width: 900px) {
+    .hamButton i{
+        display: flex;
+    }
+    .hamButton div{
+        display: none;
+    }
+    .hamButton,.hamButton i{
+        width: 100px;
+    }
+}
+@media   (min-width: 900px) {
+    .hamButton i{
+        display: none;
+    }
+    .hamButton div{
+        display: flex;
+    }
+    .hamButton,.hamButton i{
+        width: 100px;
+    }
+    .navbar div:nth-child(2){
+        width: 700px;
+        
+    }
+}
