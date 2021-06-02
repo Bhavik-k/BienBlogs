@@ -177,7 +177,9 @@ header::before{
     position: absolute;
     bottom: -300px;
     left: 45%;
-    opacity: .7
+    opacity: .7;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 
