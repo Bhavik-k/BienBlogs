@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Mulish', sans-serif;
+}
+body{
     overflow-y: hidden;
     overflow-x: hidden;
 }
