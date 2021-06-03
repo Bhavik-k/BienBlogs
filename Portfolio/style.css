@@ -5,12 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Mulish', sans-serif;
-}
-body{
     overflow-y: hidden;
     overflow-x: hidden;
-    max-width: 100vw;
-    max-height: 100vh
 }
 a{
     text-decoration: none;
@@ -65,17 +61,21 @@ header::before{
     place-items: center;
     height: 100vh;
     width: 100vw;
-    left: 200vw;
+    left: 0;
     top: 0;
-    background-color: #fff;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, .3));
     color: #000;
     font-size: clamp(40px, 5vw, 70px);
-    transition: all 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
+
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(10px);
 }
 .menu p{
     position: fixed;
     display: grid;
-    left: 200vw;
+    left: 50px;
     top:  50px;
     transition: all 500ms ease-in-out;
     cursor: pointer;
@@ -105,12 +105,9 @@ header::before{
 
 
 .menuout{
-    left: 0;
+    opacity: 1;
+    pointer-events: all;
 }
-.menuout p{
-    left: 50px;
-}
-
 /****************************/
 
 
@@ -164,27 +161,22 @@ header::before{
     flex: 1;
 }
 .content_center h1{
-    font-size: clamp(40px, 5vw, 70px);
+    font-size: clamp(30px, 5vw, 70px);
     z-index: 1;
 }
 .content_center h2{
-    font-size: clamp(10px, 2.5vw, 30px);
+    font-size: clamp(15px, 2.5vw, 30px);
     z-index: 1;
 }
 
 
 .dot_grid{
-    position: absolute;
+    position: fixed;
+    display: grid;
     bottom: -300px;
     left: 45%;
     opacity: .7;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
-
-
-
-
 
 .hamButton{
     font-size: 50px;
@@ -230,6 +222,9 @@ header::before{
     }
     .navbar div:nth-child(2){
         width: 700px;
-        
+    }
+    .menu{
+        opacity: 0;
+        pointer-events: none;
     }
 }
